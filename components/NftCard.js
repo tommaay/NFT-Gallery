@@ -21,6 +21,7 @@ export default function NftCard({ nft }) {
     <Box
       display="flex"
       flexDir="column"
+      justifyContent="space-between"
       rounded="xl"
       overflow="hidden"
       bg="white"

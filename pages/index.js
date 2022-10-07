@@ -86,7 +86,11 @@ export default function Home() {
             <Spinner size="xl" />
           </Center>
         ) : (
-          <Grid templateColumns="repeat(3, 1fr)" gap="10" mt="10">
+          <Grid
+            templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+            gap="10"
+            mt="10"
+          >
             {nftsData.map((data) => (
               <NftCard nft={data} key={data?.tokenUri?.gateway} />
             ))}

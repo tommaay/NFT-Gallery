@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <Box minH="100vh" bg="bg" px={5}>
+        <Box minH="100vh" bg="bg" px={{ md: 5 }}>
           <Component {...pageProps} />
         </Box>
       </ChakraProvider>

@@ -39,7 +39,7 @@ export default function SearchForm({
       <TabPanels>
         <TabPanel>
           <Box as="form" py="1">
-            <VStack spacing="4" w="lg">
+            <VStack spacing="4" w={{ base: "10rem", lg: "lg" }}>
               <FormControl>
                 <FormLabel>Owner address</FormLabel>
                 <Input
@@ -82,7 +82,7 @@ export default function SearchForm({
         </TabPanel>
         <TabPanel>
           <Box as="form" py="1">
-            <VStack spacing="4" w="lg">
+            <VStack spacing="4" w={{ base: "sm", lg: "lg" }}>
               <FormControl>
                 <FormLabel>Collection address</FormLabel>
                 <Input

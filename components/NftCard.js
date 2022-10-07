@@ -23,7 +23,7 @@ export default function NftCard({ nft }) {
       flexDir="column"
       rounded="xl"
       overflow="hidden"
-      bg="gray.100"
+      bg="white"
       border="1px"
       borderColor="gray.300"
       maxW="lg"
@@ -38,7 +38,7 @@ export default function NftCard({ nft }) {
         )}
       </Box>
 
-      <Box display="flex" flexDir="column" rowGap="2" p="4" roundedBottom="md">
+      <Box display="flex" flexDir="column" rowGap="2" p="4" roundedBottom="md" bg="gray.100">
         <Box mb="2">
           <Text as="h2" fontSize="xl" color="gray.800" mb="3">
             {nft.title}

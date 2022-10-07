@@ -7,7 +7,6 @@ const nextConfig = {
     paths: {
       "/components/*": ["components/*"],
       "/pages/*": ["pages/*"],
-      "/utils/*": ["utils/*"],
       "/styles/*": ["styles/*"],
       "/public/*": ["public/*"],
     },

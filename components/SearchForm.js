@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   VStack,
   FormControl,
@@ -12,7 +11,6 @@ import {
   TabPanels,
   Tab,
   TabPanel,
-  Box,
 } from "@chakra-ui/react";
 
 export const TAB_TYPE = {
@@ -26,22 +24,26 @@ export default function SearchForm({
   setCollectionAddress,
   shouldFetchForCollections,
   setShouldFetchForCollections,
-  fetchNftsForOwner,
-  fetchNftsOfCollection,
+  onTabChange,
+  fetchNfts,
   shouldDisableButton,
+  walletAddress,
+  collectionAddressForWallet,
+  collectionAddress,
 }) {
   return (
-    <Tabs>
+    <Tabs onChange={onTabChange}>
       <TabList>
         <Tab>Search by owner</Tab>
         <Tab>Search by collection</Tab>
       </TabList>
       <TabPanels>
         <TabPanel>
-          <VStack py="1" spacing="4" w={{ base: "10rem", lg: "lg" }}>
+          <VStack py="1" spacing="4" w={{ base: "sm", md: "md", lg: "lg" }}>
             <FormControl>
               <FormLabel>Owner address</FormLabel>
               <Input
+                value={walletAddress}
                 type="text"
                 borderColor="gray.300"
                 onChange={(e) => setWalletAddress(e.target.value)}
@@ -60,6 +62,7 @@ export default function SearchForm({
               <FormControl>
                 <FormLabel>Collection address</FormLabel>
                 <Input
+                  value={collectionAddressForWallet}
                   type="text"
                   borderColor="gray.300"
                   onChange={(e) => setCollectionAddressForWallet(e.target.value)}
@@ -67,7 +70,7 @@ export default function SearchForm({
               </FormControl>
             )}
             <Button
-              onClick={fetchNftsForOwner}
+              onClick={fetchNfts}
               disabled={shouldDisableButton(TAB_TYPE.OWNER)}
               w="full"
               bg="brand"
@@ -79,17 +82,18 @@ export default function SearchForm({
           </VStack>
         </TabPanel>
         <TabPanel>
-          <VStack py="1" spacing="4" w={{ base: "sm", lg: "lg" }}>
+          <VStack py="1" spacing="4" w={{ base: "sm", md: "md", lg: "lg" }}>
             <FormControl>
               <FormLabel>Collection address</FormLabel>
               <Input
+                value={collectionAddress}
                 type="text"
                 borderColor="gray.300"
                 onChange={(e) => setCollectionAddress(e.target.value)}
               />
             </FormControl>
             <Button
-              onClick={fetchNftsOfCollection}
+              onClick={fetchNfts}
               disabled={shouldDisableButton(TAB_TYPE.COLLECTION)}
               w="full"
               bg="brand"

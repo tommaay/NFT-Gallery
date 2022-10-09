@@ -83,6 +83,7 @@ export default function Home() {
     {
       enabled: false,
       keepPreviousData: true,
+      retry: 1,
     }
   );
 
@@ -97,6 +98,7 @@ export default function Home() {
     {
       enabled: false,
       keepPreviousData: true,
+      retry: 1,
     }
   );
 
